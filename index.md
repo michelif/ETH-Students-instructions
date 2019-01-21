@@ -1,5 +1,6 @@
 ---
-layout: home
+layout: post
+title:  "Getting started at ETH Tier3"
 ---
 
 This page is intended to help arbeit/master students in the first steps of their work with ETH. Send comments to micheli@cern.ch
