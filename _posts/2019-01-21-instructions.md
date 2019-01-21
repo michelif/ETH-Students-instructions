@@ -3,7 +3,7 @@ layout: post
 title:  "Getting started at ETH Tier3"
 ---
 
-This page is intended to help arbeit/master students in the first steps of their work with ETH. Send comments to micheli@cern.ch
+This page is intended to help semester/master students in the first steps of their work with ETH. Send comments to micheli@cern.ch
 
 ## 1. Get an account at Tier3
 
