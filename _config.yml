@@ -1,4 +1,5 @@
-theme: jekyll-theme-slate
+#theme: jekyll-theme-slate
+theme: jekyll-theme-architect
 title: 'Instructions for ETH students'
 header_pages:
 - index.md
