@@ -15,8 +15,10 @@ The first step is to setup the environement for running ROOT and jupyter. [This 
 After that try to start a jupyter notebook on a t3 machine
 
 {% highlight python %} 
+
 jupyter notebook --port 8883 --no-browser 
-{% endhighlight}
+
+{% endhighlight %}
 
 where 8883 has to be changed with the number of the PORT you used for setup.
 
