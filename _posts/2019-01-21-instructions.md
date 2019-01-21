@@ -1,4 +1,4 @@
---
+---
 layout: post
 title:  "Getting started at ETH Tier3"
 ---
