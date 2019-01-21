@@ -1,6 +1,8 @@
 #theme: jekyll-theme-slate
 #theme: jekyll-theme-architect
 remote_theme: KingFelix/emerald
+base_url: michelif/ETH-Students-instuctions
+
 title: 'Instructions for ETH students'
 header_pages:
 - index.md
