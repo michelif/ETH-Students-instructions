@@ -3,8 +3,5 @@
 theme: minima
 title: "Instructions for students starting with ETH"
 
-plugins:
-- jekyll-feed
-
 header_pages:
 - index.md
