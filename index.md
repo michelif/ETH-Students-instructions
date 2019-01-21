@@ -1,3 +1,34 @@
+## Instructions for students starting with ETH
+
+This page is intended to help arbeit/master students in the first steps of their work with ETH. Send comments to micheli@cern.ch
+
+### 1. Get an account at Tier3
+
+The starting point is to get an account at the T3 @ PSI. You can follow the instructions [here](https://wiki.chipp.ch/twiki/bin/view/CmsTier3/HowToGetAccount). In general, you can specify that you don't
+need a GRID account. Ask your supervisor what to put in "physics group", the suggested login shell is /bin/bash.
+
+Basic instructions on how to login and perform basic operations can be found [here](https://wiki.chipp.ch/twiki/bin/view/CmsTier3/HowToSetupYourAccount). Please note that for ETH the user interface host name is t3ui02.psi.ch. 
+
+### 2. Preliminary steps
+
+The first step is to setup the environement for running ROOT and jupyter. [This page](https://wiki.chipp.ch/twiki/bin/view/CmsTier3/HowToWorkInCmsEnv#The_ROOT_Environment_and_Jupyter) collects the needed informations. 
+After that try to start a jupyter notebook on a t3 machine
+
+{% highlight python %} 
+jupyter notebook --port 8883 --no-browser 
+{% endhighlight}
+
+where 8883 has to be changed with the number of the PORT you used for setup.
+
+Open a local browser on your laptop and go to http://localhost:8883/tree 
+
+
+
+
+
+
+
+
 ## Welcome to GitHub Pages
 
 You can use the [editor on GitHub](https://github.com/michelif/ETH-Students-instuctions/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
