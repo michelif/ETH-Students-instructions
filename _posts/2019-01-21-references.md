@@ -1,10 +1,12 @@
 
-## Useful references
+## A Collection of useful references
 
 ### Photons and electrons
 
 Photons in CMS: <https://arxiv.org/abs/1502.02702> 
+
 Electrons in CMS: <https://arxiv.org/abs/1502.02701>
+
 Reconstruction and Identification algorithms, read the section "Photon Reconstruction and Selection” in <http://www.roma1.infn.it/cms/tesiPHD/soffi.pdf>
 
 ### Bayesian Optimization
