@@ -23,18 +23,6 @@ where 8883 has to be changed with the number of the PORT you used for setup.
 Open a local browser on your laptop and go to http://localhost:8883/tree 
 
 
-
-
-
-
-
-
-## Welcome to GitHub Pages
-
-You can use the [editor on GitHub](https://github.com/michelif/ETH-Students-instuctions/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
-
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
-
 ### Markdown
 
 Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
