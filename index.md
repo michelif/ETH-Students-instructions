@@ -1,4 +1,6 @@
+---
 layout: home
+---
 
 ## Instructions for students starting with ETH
 
