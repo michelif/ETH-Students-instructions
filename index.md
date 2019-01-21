@@ -14,9 +14,9 @@ Basic instructions on how to login and perform basic operations can be found [he
 The first step is to setup the environement for running ROOT and jupyter. [This page](https://wiki.chipp.ch/twiki/bin/view/CmsTier3/HowToWorkInCmsEnv#The_ROOT_Environment_and_Jupyter) collects the needed informations. 
 After that try to start a jupyter notebook on a t3 machine:
 
-{% highlight python %} 
+```python
 jupyter notebook --port 8883 --no-browser 
-{% endhighlight %}
+```
 
 where 8883 has to be changed with the number of the PORT you used for setup.
 
