@@ -1,4 +1,5 @@
 This page collects the instructions for the basic setup of electron energy regresion with Neural Networks.
+The basic instructions and prerequisites to run GPUs at Tier3 can be found here <https://michelif.github.io/ETH-Students-instructions/2019/01/21/instructions.html>
 
 ### First get the code:
 
@@ -23,12 +24,12 @@ source bootJupyter.sh
 Set the ROOT Environment and Jupyter/IPython and check that your env variables are correct
 
 ```bash
-Which python:
+which python:
 ```
 should give /scratch/musella/anaconda3/bin/python
 
 ```bash
-Which anaconda:
+which anaconda:
 ```
 
 should give /scratch/musella/anaconda3/bin/anaconda
@@ -127,9 +128,10 @@ To plot the results:
 jupyter notebook —port 8889 —no-browser
 ```
 
-select the kernel —> ```Python [conda env:tensorflow] ```
-and run the  ```/GPU/HHbbgg_ETH_devel/bregression/notebooks/plot_phoEnergy.ipynb```
-  -> modifying the path to the dir/file of the results:
-	inp_dir='./'
-	inp_file='files_PhotonRegNN_appliedapplied_res_2018-11-01_Ntup_10Nov_Photon_training_allvars.hd5'
+select the kernel: ```python [conda env:tensorflow] ```
+and run ```HHbbgg_ETH_devel/bregression/notebooks/plot_phoEnergy.ipynb``` modifying the path to the dir/file of the results:
 
+```
+inp_dir='./'	
+inp_file='files_PhotonRegNN_appliedapplied_res_2018-11-01_Ntup_10Nov_Photon_training_allvars.hd5'
+```
