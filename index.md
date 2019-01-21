@@ -22,6 +22,34 @@ where 8883 has to be changed with the number of the PORT you used for setup.
 
 Open a local browser on your laptop and go to http://localhost:8883/tree 
 
+### 3. Setting up a web-page
+
+We will need a lot of plots. A convenient way is to look at them is to create a web-page for them.
+
+Instructions:
+
+0- Access your directory on people.phys.etz.ch following https://readme.phys.ethz.ch/storage/access/
+
+1- cut an paste the lines in  "Creating the homepage - Short description for Linux and Mac command line users” from :https://readme.phys.ethz.ch/web/how_to_get_a_personal_homepage/
+
+2- create in public_html a directory called plots.
+
+3- cd plots
+
+4- git clone https://github.com/musella/php-plots.git 
+
+5- follow the instruction in the README in https://github.com/musella/php-plots
+
+6- It is suggested to get [this php file]() and overwrite the one you got from git. This php allows a better management for plot display
+
+7- change mdonega —>you_username index.php
+   (it’s the line    $script_path = "/~mdonega/plots”;   )
+   
+8- send a mail to isg@phys.ethz.ch and ask them to enable php in your directory adding your supervisor in cc (say it’s the same configuration they made for mdonega) 
+
+9- if everything works you should get something like this: 
+     people.phys.ethz.ch/~mdonega/plots/uglyPlots_v9/
+
 
 ### Markdown
 
