@@ -2,6 +2,11 @@
 #theme: jekyll-theme-architect
 theme: minima
 
+description: >- # this means to ignore newlines until "baseurl:"
+  A collection experiments in machine learning and data science.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "" # the base hostname & protocol for your site, e.g. http://example.com
+
 title: 'A collection of useful informations for ETH students'
 header_pages:
 - index.md
