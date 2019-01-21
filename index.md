@@ -56,21 +56,21 @@ Instructions:
 
 2. Login to the GPUs using:
 
-{% highlight bash %} 
+```bash
 ssh t3gpu01
-{% endhighlight %}
+```
 
 3. Set correct environment in order to use python and all libraries needed:
 
-{% highlight bash %} 
+```bash
 export PATH=/scratch/musella/anaconda3/bin:$PATH
-{% endhighlight %}
+```
 
 which loads 4 environments which can be shown by using:
 
-{% highlight bash %} 
+```bash
 conda env list
-{% endhighlight %}
+```
 
 - base (loads all basic packages with jupyter)
 - cern root (ROOT6, not compatible with jupyter, but has root numpy, root pandas) 
@@ -79,37 +79,37 @@ conda env list
 
 Choose correct environment (e.g. for training tensorflow) by running
 
-{% highlight bash %} 
+```bash
 source activate tensorflow
-{% endhighlight %}
+```
 
 4. Check which GPUs are in use
-{% highlight bash %} 
+```bash
 nvidia−smi
-{% endhighlight %}
+```
 
 set the GPU number to one that is not in use by setting the environment variable CUDA VISIBLE DEVICES
 before executing the script, e.g. in order to use GPU 1
 
-{% highlight bash %} 
+```bash
 CUDA VISIBLE DEVICES=1 ./ train .py
-{% endhighlight %}
+```
 
 
 in the python script the tensorflow device mapping can be checked by adding:
 
-{% highlight python %} 
+```bash
 import tensorflow as tf
 import tensorflow . keras . backend as K
 
 sess = tf.Session(config=tf.ConfigProto(log device placement=True))
 K. set session(sess)
-{% endhighlight %}
+```
 
 5. after starting the training, open new terminal, login to GPUs again and check GPU usage by running
-{% highlight bash %} 
+```bash
 nvidia−smi
-{% endhighlight %}
+```
 
 6. in case you have questions or want to join the mattermost channel in which we discuss questions or general stuff
 regarding the GPUs, write an email to christina.reissel@cern.ch.
