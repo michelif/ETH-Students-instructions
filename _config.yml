@@ -2,6 +2,6 @@
 #theme: jekyll-theme-architect
 theme: minima
 
-title: 'Instructions for ETH students'
+title: 'A collection of useful informations for ETH students'
 header_pages:
 - index.md
