@@ -12,8 +12,7 @@ Basic instructions on how to login and perform basic operations can be found [he
 ### 2. Preliminary steps
 
 The first step is to setup the environement for running ROOT and jupyter. [This page](https://wiki.chipp.ch/twiki/bin/view/CmsTier3/HowToWorkInCmsEnv#The_ROOT_Environment_and_Jupyter) collects the needed informations. 
-After that try to start a jupyter notebook on a t3 machine
-
+After that try to start a jupyter notebook on a t3 machine:
 {% highlight python %} 
 jupyter notebook --port 8883 --no-browser 
 {% endhighlight %}
@@ -40,7 +39,7 @@ Instructions:
 
 5- follow the instruction in the README in https://github.com/musella/php-plots
 
-6- It is suggested to get [this php file]() and overwrite the one you got from git. This php allows a better management for plot display
+6- It is suggested to get [this php file](https://github.com/michelif/ETH-Students-instuctions/blob/master/index_for_students.php) and overwrite the one you got from git. This php allows a better management for plot display
 
 7- change mdonega —>you_username index.php
    (it’s the line    $script_path = "/~mdonega/plots”;   )
@@ -49,6 +48,23 @@ Instructions:
 
 9- if everything works you should get something like this: 
      people.phys.ethz.ch/~mdonega/plots/uglyPlots_v9/
+     
+### How to use GPUs on Tier3
+
+1. Get a Tier3 computing account and make sure that you can log in to the /t3home (use pwd to check if you are in the correct home directory). In case you dont have an account yet or only a shome directory contact the Tier3 admins. The t3home space is limited to 10GB, for bigger files use the shome directory or storage element.
+
+2. Login to the GPUs using:
+{% highlight bash %} 
+ssh t3gpu01
+{% endhighlight %}
+
+3. Set correct environment in order to use python and all libraries needed:
+     
+### Useful references
+
+Photons in CMS: https://arxiv.org/abs/1502.02702 
+Electrons in CMS: https://arxiv.org/abs/1502.02701
+Reconstruction and Identification algorithms, read the section "Photon Reconstruction and Selection” in http://www.roma1.infn.it/cms/tesiPHD/soffi.pdf
 
 
 ### Markdown
