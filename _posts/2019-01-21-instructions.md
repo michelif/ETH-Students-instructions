@@ -57,16 +57,17 @@ We will need **a lot of plots**. A convenient way is to look at them is to creat
 
 1. Get a Tier3 computing account and make sure that you can log in to the /t3home (use pwd to check if you are in the correct home directory). In case you dont have an account yet or only a shome directory follow the steps above and/or contact Tier3 admins. The t3home space is limited to 10GB, for bigger files use the shome directory or storage element.
 
-2. Login to the GPUs using:
+2. Login to the GPU login interface with:
 
 ```bash
-ssh t3gpu01
+ssh t3login
 ```
+For authorization, you need to copy your public key .ssh/id_rsa.pub to .ssh/authorized_keys. In order to get a public key, follow the instructions here (or on similar webpages): https://kb.iu.edu/d/aews.
 
 3. Set correct environment in order to use python and all libraries needed:
 
 ```bash
-export PATH=/scratch/musella/anaconda3/bin:$PATH
+export PATH=/shome/mdonega/anaconda3/bin:$PATH
 ```
 
 which loads 4 environments which can be shown by using:
@@ -86,32 +87,38 @@ Choose correct environment (e.g. for training tensorflow) by running
 source activate tensorflow
 ```
 
-4. Check which GPUs are in use
+4. In order to run a training, you can do so by submitting a script:
+
 ```bash
-nvidia−smi
+sbatch submit_train.sh
 ```
 
-set the GPU number to one that is not in use by setting the environment variable CUDA VISIBLE DEVICES
-before executing the script, e.g. in order to use GPU 1
+submit_train.sh has to be in the following form:
 
 ```bash
-CUDA VISIBLE DEVICES=1 ./ train .py
+#!/bin/bash
+
+#SBATCH --job-name=test_gpu # name given to the job                    
+
+#SBATCH --account=gpu_gres  # to access gpu resources
+
+#SBATCH --nodes=1       # request to run job on single node                                       
+
+#SBATCH --ntasks=5     # request 10 CPU's (t3gpu01: balance between CPU and GPU : 5CPU/1GPU)      
+
+#SBATCH --gres=gpu:1    # request 1 GPU's on machine                                         
+
+python your_python_code.py
+
 ```
+In order to run a training on a single gpu, you dont have to modify the script above at all, expect of changing the last line in order to load your personal python script.
 
+Running the script will give you a file called slurm-XXX.out containing the terminal output of your job as well as possible errors. Input files and the output files such as pickle files saving the trained model can be only stored in the /t3home directory by now.
 
-in the python script the tensorflow device mapping can be checked by adding:
+5. The status of the jobs can be checked with 
 
 ```bash
-import tensorflow as tf
-import tensorflow . keras . backend as K
-
-sess = tf.Session(config=tf.ConfigProto(log device placement=True))
-K. set session(sess)
-```
-
-5. after starting the training, open new terminal, login to GPUs again and check GPU usage by running
-```bash
-nvidia−smi
+squeue -all
 ```
 
 6. in case you have questions or want to join the mattermost channel in which we discuss questions or general stuff
