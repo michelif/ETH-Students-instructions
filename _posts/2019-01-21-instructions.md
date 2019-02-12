@@ -111,9 +111,9 @@ submit_train.sh has to be in the following form:
 python your_python_code.py
 
 ```
-In order to run a training on a single gpu, you dont have to modify the script above at all, expect of changing the last line in order to load your personal python script.
+In order to run a training on a single gpu, you dont have to modify the script at all, except of changing the last line in order to run your personal code.
 
-Running the script will give you a file called slurm-XXX.out containing the terminal output of your job as well as possible errors. Input files and the output files such as pickle files saving the trained model can be only stored in the /t3home directory by now.
+Submitting / running submit_train.sh will give you a file called slurm-XXX.out containing the terminal output of your job as well as possible errors. Input and the output such as pickle files saving the trained model can only be stored in the /t3home directory by now.
 
 5. The status of the jobs can be checked with 
 
