@@ -53,7 +53,7 @@ We will need **a lot of plots**. A convenient way is to look at them is to creat
 9- if everything works you should get something like this: 
      people.phys.ethz.ch/~mdonega/plots/uglyPlots_v9/
      
-## How to use GPUs on Tier3
+## 4. How to use GPUs on Tier3
 
 1. Get a Tier3 computing account and make sure that you can log in to the /t3home (use pwd to check if you are in the correct home directory). In case you dont have an account yet or only a shome directory follow the steps above and/or contact Tier3 admins. The t3home space is limited to 10GB, for bigger files use the shome directory or storage element.
 
