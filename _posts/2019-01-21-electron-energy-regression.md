@@ -52,7 +52,7 @@ tensorflow_gpu           /shome/mdonega/anaconda3/envs/tensorflow_gpu
 xgboost                  /shome/mdonega/anaconda3/envs/xgboost
 ```
 
-Activate tensorflow with:
+Activate tensorflow_gpu with:
 
 ```bash
 source activate tensorflow_gpu
