@@ -20,22 +20,21 @@ screen
 # only the first time you login get this configuration script
 cp /t3home/mdonega/bootJupyter.sh .
 ssh -L 8889:localhost:8889  [USERNAME]@t3login
-source /bootJupyter.sh
+source ./bootJupyter.sh
 ```
 The t3login is only a virtual machine used to submit jobs to the GPUs
 
-Set the ROOT Environment and Jupyter/IPython and check that your env variables are correct
+Running bootJupyter.sh you should get
 
 ```bash
-which python:
+SET THE ROOT Environment and Jupyter/IPython
+Which python:
+/shome/mdonega/anaconda3/bin/python
+Which anaconda:
+/shome/mdonega/anaconda3/bin/anaconda
 ```
-should give /scratch/mdonega/anaconda3/bin/python
 
-```bash
-which anaconda:
-```
-
-should give /scratch/mdonega/anaconda3/bin/anaconda
+You can check the installed conda environments by:
 
 ```bash
 conda env list
@@ -58,7 +57,16 @@ Activate tensorflow with:
 ```bash
 source activate tensorflow_gpu
 ```
+you should see:
 
+```bash
+(tensorflow_gpu) mdonega@t3ui02:~ >
+```
+
+(and deactivate when you are done)
+```bash
+source deactivate
+```
 Remember to set your scratch env variable
 
 ```bash
@@ -93,6 +101,25 @@ To submit the job
 ### Some useful commands to control your jobs:
 
 SLURM is used as scheduler for the GPU.
+(google for slurm commands if you need more)
 
-> squeue
+Submit jobs:
+```bash
+sbatch myJob.sh
+```
+
+Cheeck your jobs:
+```bash
+squeue -u <username>
+```
+
+Status of your jobs:
+```bash
+sstat --format=AveCPU,AvePages,AveRSS,AveVMSize,JobID -j <jobid> --allsteps
+```
+
+Kill jobs:
+```bash
+scancel <jobid>
+```
 
