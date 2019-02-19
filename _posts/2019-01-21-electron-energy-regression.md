@@ -96,7 +96,9 @@ python [my python training script]
 as an example [my python training script] could be "train_ffwd_phoEnergy.py --inp-dir=./tmp/ --inp-file=Ntup_10Nov_Photon_training_allvars.hd5 --out-dir ./tmp/ --loss mse --epochs=1"
 
 To submit the job
-> sbatch myJob.sh
+```bash
+sbatch myJob.sh
+```
 
 ### Some useful commands to control your jobs:
 
