@@ -60,7 +60,7 @@ source activate tensorflow_gpu
 you should see:
 
 ```bash
-(tensorflow_gpu) mdonega@t3ui02:~ >
+(tensorflow_gpu) mdonega@t3login:~ >
 ```
 
 (and deactivate when you are done)
