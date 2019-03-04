@@ -18,7 +18,7 @@ You should create your own branch, then do pull requests when you are done.
 ssh -L 8889:localhost:8889  [USERNAME]@t3ui02.psi.ch
 screen 
 # only the first time you login get this configuration script
-cp /t3home/mdonega/bootJupyter.sh .
+cp /work/mdonega/bootJupyter.sh .
 ssh -L 8889:localhost:8889  [USERNAME]@t3login
 source ./bootJupyter.sh
 ```
@@ -29,9 +29,9 @@ Running bootJupyter.sh you should get
 ```bash
 SET THE ROOT Environment and Jupyter/IPython
 Which python:
-/shome/mdonega/anaconda3/bin/python
+/work/mdonega/anaconda3/bin/python
 Which anaconda:
-/shome/mdonega/anaconda3/bin/anaconda
+/work/mdonega/anaconda3/bin/anaconda
 ```
 
 You can check the installed conda environments by:
@@ -44,12 +44,13 @@ should give:
 ```bash
 # conda environments:
 #
-base                  *  /shome/mdonega/anaconda3
-cern_root                /shome/mdonega/anaconda3/envs/cern_root
-pytorch                  /shome/mdonega/anaconda3/envs/pytorch
-tensorflow               /shome/mdonega/anaconda3/envs/tensorflow
-tensorflow_gpu           /shome/mdonega/anaconda3/envs/tensorflow_gpu
-xgboost                  /shome/mdonega/anaconda3/envs/xgboost
+base                  *  /work/mdonega/anaconda3
+cern_root                /work/mdonega/anaconda3/envs/cern_root
+python2                  /work/mdonega/anaconda3/envs/python2
+pytorch                  /work/mdonega/anaconda3/envs/pytorch
+tensorflow               /work/mdonega/anaconda3/envs/tensorflow
+tensorflow_gpu           /work/mdonega/anaconda3/envs/tensorflow_gpu
+xgboost                  /work/mdonega/anaconda3/envs/xgboost
 ```
 
 Activate tensorflow_gpu with:
