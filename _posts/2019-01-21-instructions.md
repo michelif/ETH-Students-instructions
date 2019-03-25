@@ -67,7 +67,7 @@ For authorization, you need to copy your public key .ssh/id_rsa.pub to .ssh/auth
 3. Set correct environment in order to use python and all libraries needed:
 
 ```bash
-export PATH=/shome/mdonega/anaconda3/bin:$PATH
+export PATH=/work/mdonega/anaconda3/bin:$PATH
 ```
 
 which loads 4 environments which can be shown by using:
