@@ -17,12 +17,22 @@ As all the fundamental papers it is a bit obscure, especially on math parts.
 First of all, a super-nice explanation of what a gaussian process is in bayesian statistics:
 <http://katbailey.github.io/post/gaussian-processes-for-dummies/>
 
+Interesting blog post with nice explanations a lot of applets for Gaussian processes: 
+<https://distill.pub/2019/visual-exploration-gaussian-processes/#FurtherReading>
+
 A general introduction to hyperparameters optimization:
 <https://towardsdatascience.com/a-conceptual-explanation-of-bayesian-model-based-hyperparameter-optimization-for-machine-learning-b8172278050f>
 
-two very nice lessons on bayesian optimization:
+Two very nice lessons on bayesian optimization:
 <http://gpss.cc/gpmc17/slides/LancasterMasterclass_1.pdf>
 <https://www.iro.umontreal.ca/~bengioy/cifar/NCAP2014-summerschool/slides/Ryan_adams_140814_bayesopt_ncap.pdf>
 
-some code with nice plots:
+
+On the acquisition function:
+https://www.cse.wustl.edu/~garnett/cse515t/spring_2015/files/lecture_notes/12.pdf
+
+Some code with nice plots:
 <https://blog.dominodatalab.com/fitting-gaussian-process-models-python/>
+
+Interesting notebook with figures:
+<https://nbviewer.jupyter.org/github/adamian/adamian.github.io/blob/master/talks/Brown2016.ipynb>
