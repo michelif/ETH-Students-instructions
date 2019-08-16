@@ -124,7 +124,7 @@ The current activity on the GPUs can be monitored by running:
 srun --partition gpu /usr/bin/nvidia-smi
 ```
 
-6. Before you start, please download the files "", "" and "" in this folder. Try to run a training with keras and tensorflow as described above using this example code. Make sure that the output in slurm-XXX.out says
+6. Before you start, please download all files in [this folder](https://github.com/michelif/ETH-Students-instructions/tree/master/example_gpu). Try to run a training with keras and tensorflow as described above using the example code. Make sure that the output in slurm-XXX.out says
 ```bash
 -------------------------------------------
 GPU available:  True
