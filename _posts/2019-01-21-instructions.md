@@ -55,19 +55,18 @@ We will need **a lot of plots**. A convenient way is to look at them is to creat
      
 ## 4. How to use GPUs on Tier3
 
-1. Get a Tier3 computing account and make sure that you can log in to the /t3home (use pwd to check if you are in the correct home directory). In case you dont have an account yet or only a shome directory follow the steps above and/or contact Tier3 admins. The t3home space is limited to 10GB, for bigger files use the shome directory or storage element.
+1. Get a Tier3 computing account and make sure that you can log in to the /t3home (use pwd to check if you are in the correct home directory). In case you dont have an account yet or only a work directory follow the steps above and/or contact Tier3 admins. The t3home space is limited to 10GB, for bigger files use the /work directory or storage element.
 
 2. Login to the GPU login interface with:
 
 ```bash
-ssh t3login
+ssh t3ui07
 ```
-For authorization, you need to copy your public key .ssh/id_rsa.pub to .ssh/authorized_keys. In order to get a public key, follow the instructions here (or on similar webpages): https://kb.iu.edu/d/aews.
 
 3. Set correct environment in order to use python and all libraries needed:
 
 ```bash
-export PATH=/work/mdonega/anaconda3/bin:$PATH
+export PATH=/work/creissel/anaconda3/bin:$PATH
 ```
 
 which loads 4 environments which can be shown by using:
@@ -75,32 +74,32 @@ which loads 4 environments which can be shown by using:
 ```bash
 conda env list
 ```
+For general purposes, only the two tensorflow environments are relevant:
+- tensorflow_cpu (contains all basic packages for machine learning on a CPU)
+- tensorflow_gpu (contains all basic packages for machine learning on a GPU) 
 
-- base (loads all basic packages with jupyter)
-- cern root (ROOT6, not compatible with jupyter, but has root numpy, root pandas) 
-- tensorflow (most important environment to train NNs)
-- pytorch
-
-Choose correct environment (e.g. for training tensorflow) by running
+Choose the correct environment. It is important to use the tensorflow_gpu environment, when the jobs are submitted to the gpus. Using tensorflow_cpu will not raise any error, but jobs will run on the CPUs and potentially block computing resources for other users!
 
 ```bash
-source activate tensorflow
+source activate tensorflow_gpu
 ```
 
 4. In order to run a training, you can do so by submitting a script:
 
 ```bash
-sbatch submit_train.sh
+sbatch submit_gpu.sh
 ```
 
-submit_train.sh has to be in the following form:
+submit_gpu.sh has to be in the following form:
 
 ```bash
 #!/bin/bash
 
-#SBATCH --job-name=test_gpu # name given to the job                    
+#SBATCH --job-name=example                   
 
 #SBATCH --account=gpu_gres  # to access gpu resources
+
+#SBATCH --partition=gpu
 
 #SBATCH --nodes=1       # request to run job on single node                                       
 
@@ -108,19 +107,35 @@ submit_train.sh has to be in the following form:
 
 #SBATCH --gres=gpu:1    # request 1 GPU's on machine                                         
 
-python your_python_code.py
+python example.py
 
 ```
 In order to run a training on a single gpu, you dont have to modify the script at all, except of changing the last line in order to run your personal code.
 
-Submitting / running submit_train.sh will give you a file called slurm-XXX.out containing the terminal output of your job as well as possible errors. Input and the output such as pickle files saving the trained model can only be stored in the /t3home directory by now.
+Submitting / running submit_gpu.sh will give you a file called slurm-XXX.out containing the terminal output of your job as well as possible errors. Input and the output such as pickle files saving the trained model can only be stored in the /t3home directory or the /work directory by now.
 
 5. The status of the jobs can be checked with 
 
 ```bash
 squeue -all
 ```
+The current activity on the GPUs can be monitored by running:
+```bash
+srun --partition gpu /usr/bin/nvidia-smi
+```
 
-6. in case you have questions or want to join the mattermost channel in which we discuss questions or general stuff
-regarding the GPUs, write an email to christina.reissel@cern.ch.
+6. Before you start, please download the files "", "" and "" in this folder. Try to run a training with keras and tensorflow as described above using this example code. Make sure that the output in slurm-XXX.out says
+```bash
+-------------------------------------------
+GPU available:  True
+Keras backend:  tensorflow
+-------------------------------------------
+```
+While running more heavy trainings, please always check the GPU workload with 
+```bash
+srun --partition gpu /usr/bin/nvidia-smi
+```
+in order to make sure that you are really using the GPUs!
+
+6. In case you have questions regarding the GPUs, write an email to christina.reissel@cern.ch or contact any of the T3admins.
 
