@@ -60,7 +60,7 @@ We will need **a lot of plots**. A convenient way is to look at them is to creat
 2. Login to the GPU login interface with:
 
 ```bash
-ssh t3ui07
+ssh t3ui02
 ```
 
 3. Set correct environment in order to use python and all libraries needed:
